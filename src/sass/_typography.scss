@@ -1,0 +1,9 @@
+@import './config';
+
+// BOX TITLE
+.box__title {
+  font-size: clamp(1rem, calc(5vw + 1rem), 1.18rem);
+  text-transform: uppercase;
+  text-align: center;
+  color: $green;
+}

@@ -1,0 +1,79 @@
+@import '../../App.scss';
+
+/***** NAVBAR STYLE *****/
+.navbar {
+  @include flexBox(space-between, center);
+  @include wrapper(90%, 0 auto);
+
+  // NAVBAR BRAND
+  &-brand {
+    @include flexBox(center, center);
+    gap: 1rem;
+
+    &__logo {
+      cursor: pointer;
+    }
+
+    &__name {
+      display: none;
+
+      // MEDIA QUERY
+      @include laptop {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  // NAVBAR MENU
+  &-menu {
+    display: none;
+
+    // MEDIA QUERY
+    @include laptop {
+      @include flexBox(center, center);
+      gap: 1rem;
+    }
+
+    &__link {
+      text-transform: capitalize;
+      transition: $ease-in-out;
+
+      &:hover {
+        color: set-text-color(#fff);
+      }
+    }
+  }
+
+  // NAVBAR ACTION
+  &-action {
+    @include flexBox(center, center);
+    gap: 1rem;
+    cursor: pointer;
+
+    // SEARCH
+    &__search {
+      @include flexBox(space-between, center);
+      gap: 0.5rem;
+
+      &__icon {
+        filter: invert(1);
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+
+      &__text {
+        display: none;
+        font-size: 1.2rem;
+
+        // MEDIA QUERY
+        @include laptop {
+          display: block;
+        }
+      }
+    }
+  }
+}

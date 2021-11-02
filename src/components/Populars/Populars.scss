@@ -1,0 +1,68 @@
+@import '../../App.scss';
+
+/***** POPULARS STYLE *****/
+
+// POPULAR BOX
+.populars-box {
+  @include wrapper(85%, 0 auto);
+  @include flexBox(center, center);
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 2rem;
+
+  .popular {
+    flex-basis: 30%;
+    min-width: 20em;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    // POPULAR HEADING
+    &-heading {
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    // POPULAR BODY
+    &-body {
+      h4 {
+        font-size: clamp(1rem, calc(5vw + 1rem), 1.18rem);
+        text-transform: uppercase;
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      p {
+        color: #1f5d6a;
+        font-size: 1rem;
+        margin-bottom: 0;
+        text-align: center;
+        padding: 1em 0;
+        border-bottom: 1px solid #e0dede;
+        width: 80%;
+        margin: 0 auto;
+
+        &:last-child {
+          margin-bottom: 2rem;
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .popular:nth-child(2) > div > div > p {
+    color: #fff;
+  }
+}
+
+// BTN BOx
+.btn-box {
+  @include flexBox(center, center);
+  margin-top: 3rem;
+
+  @media screen and(min-width: 769px) {
+    margin: 4rem 0 1.5rem;
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../App.scss';
+
+/***** TITLE STYLE *****/
+.section-title {
+  @include wrapper(90%, 0 auto);
+
+  h2 {
+    font-size: clamp(2rem, calc(5vw + 1rem), 3rem);
+    letter-spacing: 2px;
+    padding: 3rem 0;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 3rem;
+  }
+}

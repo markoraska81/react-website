@@ -1,0 +1,83 @@
+/***** CONFIG *****/
+$dark: #141416;
+$gray: #f6f6f6;
+$red: #ed1c24;
+$dark-red: #97080e;
+$green: #1f5d6a;
+
+/***** FONTS *****/
+$urbanist: 'Urbanist', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+
+// ===== TRANSITION ===== //
+$ease-in-out: all 0.4s ease-in-out;
+$linear: all 0.4s linear;
+
+/***** SET TEXT COLOR *****/
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+/***** SET TEXT COLOR BASED ON BACKGROUND *****/
+@mixin set-background($color) {
+  background-color: ($color);
+  color: set-text-color($color);
+  a {
+    color: set-text-color($color);
+  }
+}
+
+/***** FLEXBOX *****/
+@mixin flexBox($content, $align) {
+  display: flex;
+  justify-content: $content;
+  align-items: $align;
+}
+
+// ===== WRAPPER ===== //
+@mixin wrapper($width, $margin) {
+  width: 100%;
+  max-width: $width;
+  margin: $margin;
+}
+
+/***** CLEARFIX *****/
+@mixin clearFix {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+// ===== SPACING TOP ===== //
+.spacing-top > * + * {
+  margin-top: 2rem;
+}
+
+/***** MEDIA QUERY *****/
+@mixin mobile($width: 500px) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin tablet($width: 768px) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin laptop($width: 1024px) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin desktop($width: 1140px) {
+  @media (min-width: $width) {
+    @content;
+  }
+}

@@ -1,0 +1,109 @@
+@import '../../App.scss';
+
+/***** FOOTER STYLE *****/
+
+// TOP
+.footer-top {
+  @include wrapper(95%, 0 auto);
+  padding: 1rem 0 2rem;
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    text-align: left;
+
+    // MEDIA QUERY
+    @include laptop {
+      justify-content: center;
+      flex-direction: row;
+      padding: 1rem 0;
+    }
+
+    &__item {
+      border-bottom: 1px solid #f4f4f4;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      // MEDIA QUERY
+      @include laptop {
+        border-bottom: none;
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      width: 100%;
+      color: set-text-color(#000);
+      padding: 1.25em 0;
+      transition: $ease-in-out;
+
+      &:hover {
+        color: set-text-color(#fff);
+        transition: $ease-in-out;
+      }
+
+      // MEDIA QUERY
+      @include laptop {
+        border-bottom: none;
+        padding: 1.25rem;
+      }
+    }
+  }
+
+  &__social {
+    @include flexBox(center, center);
+    gap: 1rem;
+
+    &__link {
+      @include flexBox(center, center);
+      gap: 2rem;
+      padding: 0.5rem;
+      margin-right: 1.5rem;
+      background: lighten($green, 20);
+      border-radius: 50%;
+      transition: $ease-in-out;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+// BOTTOM
+.footer-bottom {
+  @include flexBox(space-between, center);
+  padding: 0.5rem 1rem;
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__name {
+      display: none;
+
+      // MEDIA QUERY
+      @include laptop {
+        display: flex;
+        font-size: 1.18rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../App.scss';
+
+/***** HOME PAGE STYLE *****/
+.home-page {
+  margin-top: 69px;
+  padding-bottom: 5rem;
+
+  // MEDIA QUERY
+  @include laptop {
+    margin-top: 101px;
+  }
+}

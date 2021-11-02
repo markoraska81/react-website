@@ -1,0 +1,47 @@
+// ===== BACKGROUND COLOR STYLE ===== //
+.bcg {
+  // HEADER & FOOTER STYLE
+  &-header,
+  &-footer {
+    @include set-background($green);
+  }
+
+  // FOOTER BOTTOM
+  &-footer-bottom {
+    @include set-background(darken($green, 10));
+  }
+
+  // HOME PAGE
+  &-home {
+    @include set-background($gray);
+    .section-title {
+      color: $green;
+    }
+  }
+
+  // ADVENTURES
+  &-adventures {
+    @include set-background(#fff);
+    h2 {
+      color: #fff;
+    }
+  }
+
+  // POPULARS
+  &-sea,
+  &-forrest {
+    @include set-background(#fff);
+    .box__title {
+      color: $green;
+      margin: 2rem 0;
+    }
+  }
+
+  &-show {
+    @include set-background($green);
+    .box__title {
+      color: #fff;
+      margin: 2rem 0;
+    }
+  }
+}

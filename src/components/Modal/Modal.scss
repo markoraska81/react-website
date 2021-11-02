@@ -1,0 +1,44 @@
+@import '../../App.scss';
+
+/***** MODAL STYLE *****/
+.modal {
+  @include flexBox(center, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  z-index: 999999;
+
+  &-overlay {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+
+    // MEDIA QUERY
+    @include laptop {
+      max-width: 800px;
+    }
+
+    img {
+      border: 3px solid #fff;
+      padding: 0.5rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &-box__body {
+    @include flexBox(space-between, center);
+  }
+
+  &-close {
+    margin-bottom: 2rem;
+    text-align: right;
+  }
+}

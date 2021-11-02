@@ -1,0 +1,36 @@
+@import '../../App.scss';
+
+/***** HERO STYLE *****/
+.hero {
+  @include wrapper(90%, 0 auto 3rem);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  align-content: stretch;
+  padding-bottom: 1rem;
+
+  // MEDIA QUERY
+  @include laptop {
+    flex-direction: row;
+    padding-bottom: 3rem;
+  }
+
+  h3,
+  h2 {
+    color: $green;
+    margin-bottom: 1rem;
+  }
+
+  .desc {
+    margin-bottom: 1rem;
+  }
+
+  &-left,
+  &-right {
+    // MEDIA QUERY
+    @include laptop {
+      flex: 1;
+      max-width: 50%;
+    }
+  }
+}
